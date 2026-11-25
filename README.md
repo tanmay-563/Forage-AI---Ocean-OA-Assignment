@@ -4,6 +4,7 @@ ForgeAI is a local-first prototype of a generic document-grounded AI agent facto
 
 ## Problem and design
 
+![Project Architecture](image.png)
 The goal is to make it easier to build task-specific agents without hand-coding one application per domain. A generic pipeline handles HR, marine procurement, and new document collections. Generated agents must answer from evidence, cite real source files, and abstain when the collection does not support a response.
 
 The CLI is the primary interface. Streamlit is a thin UI over the same workflow. See [ARCHITECTURE.md](./ARCHITECTURE.md), [PROJECT_PLAN.md](./PROJECT_PLAN.md), and [DECISIONS.md](./DECISIONS.md).
