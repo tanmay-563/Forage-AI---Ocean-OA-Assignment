@@ -1,0 +1,41 @@
+{
+  "supported_topics": [
+    "Annual leave",
+    "Attendance and working hours",
+    "Business travel and reimbursement",
+    "General expense claims",
+    "Health and wellbeing benefits",
+    "Questions and policy conflicts",
+    "Remote and hybrid work",
+    "Sick leave"
+  ],
+  "partially_supported_topics": [],
+  "unsupported_topics": [
+    "maternity benefit amounts or parental leave duration",
+    "relocation assistance or education reimbursement"
+  ],
+  "conflicting_information": [],
+  "unknown_information": [
+    {
+      "detail": "maternity benefit amounts or parental leave duration",
+      "source": "benefits_remote_work.md",
+      "page": null,
+      "row": null,
+      "classification": "explicitly unsupported/unknown"
+    },
+    {
+      "detail": "relocation assistance or education reimbursement",
+      "source": "travel_and_expenses.md",
+      "page": null,
+      "row": null,
+      "classification": "explicitly unsupported/unknown"
+    }
+  ],
+  "sources": [
+    "benefits_remote_work.md",
+    "employee_handbook.md",
+    "travel_and_expenses.md"
+  ],
+  "coverage_note": "Supported topics are inferred from headings. Explicitly missing facts are captured from document statements; other partial coverage and conflicts need human review.",
+  "evidence_checks": []
+}

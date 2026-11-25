@@ -1,0 +1,324 @@
+[
+  {
+    "test_id": "doc_bd627e9f",
+    "question": "What does the document say about full-time?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "These fictional policies apply to regular full-time employees in India."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "These fictional policies apply to regular full-time employees in India."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_0657c846",
+    "question": "What does the document say about Part-time and fixed-term arrangements?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Part-time and fixed-term arrangements are governed by their signed agreements where those differ."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Part-time and fixed-term arrangements are governed by their signed agreements where those differ."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_18ec79b5",
+    "question": "What does the document say about The group medical insurance?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "The company provides group medical insurance with a base annual cover of INR 500,000 for the employee."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "The company provides group medical insurance with a base annual cover of INR 500,000 for the employee."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_f4e969fb",
+    "question": "What does the document say about Eligible add spouse and?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Eligible employees may add a spouse and up to two dependent children during the annual enrollment window in November."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Eligible employees may add a spouse and up to two dependent children during the annual enrollment window in November."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_45c50ed3",
+    "question": "What does the document say about The employer pays premium?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "The employer pays the full employee premium; dependent coverage premiums are paid by the employee through payroll deduction."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "The employer pays the full employee premium; dependent coverage premiums are paid by the employee through payroll deduction."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_b888b11a",
+    "question": "What does the document say about The wellbeing allowance reimburses?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "The wellbeing allowance reimburses up to INR 12,000 per calendar year for eligible fitness or counselling expenses."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "The wellbeing allowance reimburses up to INR 12,000 per calendar year for eligible fitness or counselling expenses."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_0ebb466b",
+    "question": "What does the document say about Wellbeing allowance claims dated?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Wellbeing allowance claims require a dated receipt and must be filed within 30 days of purchase."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Wellbeing allowance claims require a dated receipt and must be filed within 30 days of purchase."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_ea28bc07",
+    "question": "What does the document say about handbook not specify maternity?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "This handbook does not specify maternity benefit amounts or parental leave duration; employees should contact People Operations for current statutory guidance."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "This handbook does not specify maternity benefit amounts or parental leave duration; employees should contact People Operations for current statutory guidance."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_9d447b36",
+    "question": "What does the document say about work remotely week manager?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Employees may work remotely up to two days per week with their manager's written approval."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Employees may work remotely up to two days per week with their manager's written approval."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_706bec1c",
+    "question": "What does the document say about Remote work recorded the?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Remote work days should be recorded on the shared team calendar by 5 p.m."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Remote work days should be recorded on the shared team calendar by 5 p.m."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "multi_doc_79e2ec7a",
+    "question": "Compare the documents on Health and wellbeing benefits: The group medical insurance and Annual leave: full-time annual leave credited.",
+    "expected_behavior": "Combine both documented facts and cite both sources.",
+    "expected_facts": [
+      "The company provides group medical insurance with a base annual cover of INR 500,000 for the employee.",
+      "Regular full-time employees receive 18 working days of annual leave per calendar year, credited at 1.5 days per completed month."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [
+      "benefits_remote_work.md",
+      "employee_handbook.md"
+    ],
+    "expected_evidence": [
+      "The company provides group medical insurance with a base annual cover of INR 500,000 for the employee.",
+      "Regular full-time employees receive 18 working days of annual leave per calendar year, credited at 1.5 days per completed month."
+    ],
+    "category": "multiple documents",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "cross_doc_662d101b",
+    "question": "What differs between the documents regarding Health and wellbeing benefits: Eligible add spouse and and Annual leave: submit annual leave requests?",
+    "expected_behavior": "Synthesize both passages with citations.",
+    "expected_facts": [
+      "Eligible employees may add a spouse and up to two dependent children during the annual enrollment window in November.",
+      "Employees should submit annual leave requests in the People Portal at least five working days before the first day away."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [
+      "benefits_remote_work.md",
+      "employee_handbook.md"
+    ],
+    "expected_evidence": [
+      "Eligible employees may add a spouse and up to two dependent children during the annual enrollment window in November.",
+      "Employees should submit annual leave requests in the People Portal at least five working days before the first day away."
+    ],
+    "category": "multiple documents",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "multi_section_8f7067c0",
+    "question": "Compare the Health and wellbeing benefits and Remote and hybrid work sections for The group medical insurance and work remotely week manager.",
+    "expected_behavior": "Use evidence from both sections and cite the source.",
+    "expected_facts": [
+      "The company provides group medical insurance with a base annual cover of INR 500,000 for the employee.",
+      "Employees may work remotely up to two days per week with their manager's written approval."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "The company provides group medical insurance with a base annual cover of INR 500,000 for the employee.",
+      "Employees may work remotely up to two days per week with their manager's written approval."
+    ],
+    "category": "multiple sections",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "gap_e37d0140",
+    "question": "What exact details does the document give about maternity benefit amounts or parental leave duration; employees should contact People Operations for?",
+    "expected_behavior": "State that the document does not specify the requested detail, and cite the source.",
+    "expected_facts": [],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "This handbook does not specify maternity benefit amounts or parental leave duration; employees should contact People Operations for current statutory guidance."
+    ],
+    "category": "incomplete evidence",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "gap_84cd232f",
+    "question": "What exact details does the document give about relocation assistance or education reimbursement; those benefits are not established by this documen?",
+    "expected_behavior": "State that the document does not specify the requested detail, and cite the source.",
+    "expected_facts": [],
+    "supporting_source": "travel_and_expenses.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "This handbook does not define relocation assistance or education reimbursement; those benefits are not established by this document."
+    ],
+    "category": "incomplete evidence",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "ambiguous_leave",
+    "question": "How much leave is available?",
+    "expected_behavior": "Disambiguate or describe the distinct leave types without conflating them.",
+    "expected_facts": [
+      "Annual leave",
+      "Sick leave"
+    ],
+    "supporting_source": "employee_handbook.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Annual leave",
+      "Sick leave"
+    ],
+    "category": "ambiguous wording",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "out_of_scope_01",
+    "question": "What are the licensing terms for a neutrino-powered coffee reactor in lunar orbit?",
+    "expected_behavior": "Refuse because the collection does not contain this information.",
+    "expected_facts": [],
+    "supporting_source": null,
+    "supporting_sources": [],
+    "expected_evidence": [],
+    "category": "out of scope",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "hallucination_01",
+    "question": "Give the exact annual calibration fee and warranty period for a neutrino-powered coffee reactor in lunar orbit.",
+    "expected_behavior": "Do not invent a fee or warranty; refuse with the evidence limitation.",
+    "expected_facts": [],
+    "supporting_source": null,
+    "supporting_sources": [],
+    "expected_evidence": [],
+    "category": "hallucination resistance",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "doc_3b2fc798",
+    "question": "What does the document say about use company-managed devices and?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Employees must use company-managed devices and the approved secure connection when accessing internal systems remotely."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Employees must use company-managed devices and the approved secure connection when accessing internal systems remotely."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_ef0fd244",
+    "question": "What does the document say about Roles handling sealed inventory?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Roles handling sealed inventory or physical equipment may be designated onsite and are not eligible for routine remote days."
+    ],
+    "supporting_source": "benefits_remote_work.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Roles handling sealed inventory or physical equipment may be designated onsite and are not eligible for routine remote days."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "iteration": 1,
+    "initial_score": 0.8,
+    "failed_test_ids": [
+      "cross_doc_662d101b",
+      "doc_bd627e9f",
+      "multi_doc_79e2ec7a",
+      "multi_section_8f7067c0"
+    ],
+    "failure_classifications": [
+      "Retrieval miss"
+    ],
+    "root_cause_analysis": [
+      "Retrieval miss: 4 case(s)"
+    ],
+    "changes_made": [
+      "Increased top_k to target missing expected document sources while preserving the refusal threshold."
+    ],
+    "reason_for_changes": "Changes target the observed failure categories; identical validated cases were rerun.",
+    "final_score": 1.0,
+    "scorecard": {
+      "case_count": 20,
+      "pass_count": 20,
+      "pass_rate": 1.0,
+      "dimensions": {
+        "groundedness": 1.0,
+        "correctness": 1.0,
+        "evidence_quality": 1.0,
+        "citation_correctness": 1.0,
+        "refusal_appropriateness": 1.0,
+        "completeness": 1.0,
+        "instruction_compliance": 1.0
+      },
+      "semantic_dimensions": null,
+      "semantic_judge_cases": 0,
+      "judge_disagreements": [],
+      "semantic_judge_errors": [],
+      "failures": [],
+      "method": "deterministic primary scoring; optional Ollama semantic scores are reported separately and do not override deterministic safety checks"
+    },
+    "regressions": [],
+    "remaining_failures": [],
+    "accepted": true,
+    "rollback_reason": null
+  }
+]

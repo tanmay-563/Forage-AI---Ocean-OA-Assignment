@@ -1,0 +1,27 @@
+{
+  "supported_topics": [
+    "Access and training",
+    "Chemical handling and storage",
+    "Equipment, waste, and incidents",
+    "Personal protective equipment"
+  ],
+  "partially_supported_topics": [],
+  "unsupported_topics": [
+    "medical treatment doses"
+  ],
+  "conflicting_information": [],
+  "unknown_information": [
+    {
+      "detail": "medical treatment doses",
+      "source": "lab_safety.md",
+      "page": null,
+      "row": null,
+      "classification": "explicitly unsupported/unknown"
+    }
+  ],
+  "sources": [
+    "lab_safety.md"
+  ],
+  "coverage_note": "Supported topics are inferred from headings. Explicitly missing facts are captured from document statements; other partial coverage and conflicts need human review.",
+  "evidence_checks": []
+}

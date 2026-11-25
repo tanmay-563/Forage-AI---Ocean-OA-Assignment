@@ -1,0 +1,8 @@
+pydantic>=2.6,<3
+httpx>=0.27,<1
+pymupdf>=1.24,<3
+streamlit>=1.32,<2
+pytest>=8,<10
+# Optional retrieval enhancement; no model is downloaded by ForgeAI.
+# sentence-transformers>=3,<4
+# faiss-cpu>=1.8,<2

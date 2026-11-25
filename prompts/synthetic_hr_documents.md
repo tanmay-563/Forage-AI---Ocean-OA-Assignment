@@ -1,0 +1,5 @@
+# Synthetic HR document collection prompt
+
+Create a fictional employee handbook for a mid-sized technical services company operating in India. Use a consistent company name, effective date, employee eligibility, and currency. Write specific, internally consistent rules for annual leave accrual/carryover/expiry, sick leave and documentation, attendance hours/late arrivals, health and wellbeing benefits, remote work eligibility, pre-approval, travel caps, meal and lodging limits, and receipt-based expense claims. State the submission deadlines and approval owners. Include explicit gaps for maternity/parental benefits, relocation, and education reimbursement, and direct employees to People Operations rather than inventing those details. Explain policy conflict handling. Use original values, concrete examples, and complete prose; do not use placeholders. Clearly label the handbook as synthetic and not employment advice.
+
+The committed collection in `demos/hr_policy/documents/employee_handbook.md` was authored to these constraints. The prompt is reproducibility documentation, not evidence that an LLM generated the document.

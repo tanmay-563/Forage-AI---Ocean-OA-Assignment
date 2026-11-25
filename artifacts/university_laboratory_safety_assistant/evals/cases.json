@@ -1,0 +1,316 @@
+[
+  {
+    "test_id": "doc_c38d055b",
+    "question": "What does the document say about guide supervised undergraduate work?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "This fictional guide applies to supervised undergraduate work in the Meridian University materials laboratory."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "This fictional guide applies to supervised undergraduate work in the Meridian University materials laboratory."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_9523ae06",
+    "question": "What does the document say about Students enter the laboratory?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Students may enter the laboratory only after completing the university's chemical hygiene and equipment orientation."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Students may enter the laboratory only after completing the university's chemical hygiene and equipment orientation."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_090437df",
+    "question": "What does the document say about trained supervisor present whenever?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "A trained supervisor must be present whenever a student handles corrosive chemicals or operates powered cutting equipment."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "A trained supervisor must be present whenever a student handles corrosive chemicals or operates powered cutting equipment."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_bcc51c57",
+    "question": "What does the document say about Visitors sign the laboratory?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Visitors must sign the laboratory log and remain with their host for the entire visit."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Visitors must sign the laboratory log and remain with their host for the entire visit."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_67bc3534",
+    "question": "What does the document say about Laboratory doors remain closed?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Laboratory doors must remain closed while chemical experiments are in progress."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Laboratory doors must remain closed while chemical experiments are in progress."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_bbdaff75",
+    "question": "What does the document say about Food drink and personal?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Food, drink, and personal headphones are not permitted at laboratory benches."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Food, drink, and personal headphones are not permitted at laboratory benches."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_ab87fa7f",
+    "question": "What does the document say about Safety glasses side shields?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Safety glasses with side shields are required whenever chemicals or powered tools are in use."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Safety glasses with side shields are required whenever chemicals or powered tools are in use."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_12b62790",
+    "question": "What does the document say about laboratory coat and closed-toe?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "A laboratory coat and closed-toe shoes are required in wet-chemistry work areas."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "A laboratory coat and closed-toe shoes are required in wet-chemistry work areas."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_203e1be4",
+    "question": "What does the document say about Chemical-resistant gloves selected the?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Chemical-resistant gloves must be selected from the substance-specific glove chart rather than chosen by colour."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Chemical-resistant gloves must be selected from the substance-specific glove chart rather than chosen by colour."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_c8681306",
+    "question": "What does the document say about Reusable gloves inspected before?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Reusable gloves must be inspected before use and discarded if cracked, swollen, or contaminated inside."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Reusable gloves must be inspected before use and discarded if cracked, swollen, or contaminated inside."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "multi_section_fcf18357",
+    "question": "Compare the Access and training and Chemical handling and storage sections for Students enter the laboratory and secondary chemical container show.",
+    "expected_behavior": "Use evidence from both sections and cite the source.",
+    "expected_facts": [
+      "Students may enter the laboratory only after completing the university's chemical hygiene and equipment orientation.",
+      "Every secondary chemical container must show the chemical name, concentration, preparation date, and preparer initials."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Students may enter the laboratory only after completing the university's chemical hygiene and equipment orientation.",
+      "Every secondary chemical container must show the chemical name, concentration, preparation date, and preparer initials."
+    ],
+    "category": "multiple sections",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "multi_section_af3cd9fd",
+    "question": "Compare the Chemical handling and storage and Equipment, waste, and incidents sections for secondary chemical container show and Powered saws operated only.",
+    "expected_behavior": "Use evidence from both sections and cite the source.",
+    "expected_facts": [
+      "Every secondary chemical container must show the chemical name, concentration, preparation date, and preparer initials.",
+      "Powered saws may be operated only after the student passes the equipment-specific practical check."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Every secondary chemical container must show the chemical name, concentration, preparation date, and preparer initials.",
+      "Powered saws may be operated only after the student passes the equipment-specific practical check."
+    ],
+    "category": "multiple sections",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "gap_c9766442",
+    "question": "What exact details does the document give about medical treatment doses; exposures require immediate contact with campus emergency services?",
+    "expected_behavior": "State that the document does not specify the requested detail, and cite the source.",
+    "expected_facts": [],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "The guide does not specify medical treatment doses; exposures require immediate contact with campus emergency services."
+    ],
+    "category": "incomplete evidence",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "out_of_scope_01",
+    "question": "What are the licensing terms for a neutrino-powered coffee reactor in lunar orbit?",
+    "expected_behavior": "Refuse because the collection does not contain this information.",
+    "expected_facts": [],
+    "supporting_source": null,
+    "supporting_sources": [],
+    "expected_evidence": [],
+    "category": "out of scope",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "hallucination_01",
+    "question": "Give the exact annual calibration fee and warranty period for a neutrino-powered coffee reactor in lunar orbit.",
+    "expected_behavior": "Do not invent a fee or warranty; refuse with the evidence limitation.",
+    "expected_facts": [],
+    "supporting_source": null,
+    "supporting_sources": [],
+    "expected_evidence": [],
+    "category": "hallucination resistance",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "doc_aa7fe697",
+    "question": "What does the document say about Face shields supplement safety?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Face shields supplement safety glasses during splash-prone transfers but do not replace them."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Face shields supplement safety glasses during splash-prone transfers but do not replace them."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_491a3140",
+    "question": "What does the document say about secondary chemical container show?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Every secondary chemical container must show the chemical name, concentration, preparation date, and preparer initials."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Every secondary chemical container must show the chemical name, concentration, preparation date, and preparer initials."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_0389ca3e",
+    "question": "What does the document say about Incompatible chemicals stored separate?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Incompatible chemicals must be stored in separate labelled cabinets according to the posted compatibility chart."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Incompatible chemicals must be stored in separate labelled cabinets according to the posted compatibility chart."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_d651bff6",
+    "question": "What does the document say about Corrosive liquids carried secondary?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Corrosive liquids must be carried in a secondary containment tray when moved between rooms."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Corrosive liquids must be carried in a secondary containment tray when moved between rooms."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_5e159b08",
+    "question": "What does the document say about Unlabelled containers not opened?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Unlabelled containers must not be opened and should be isolated for the laboratory manager."
+    ],
+    "supporting_source": "lab_safety.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Unlabelled containers must not be opened and should be isolated for the laboratory manager."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  }
+]

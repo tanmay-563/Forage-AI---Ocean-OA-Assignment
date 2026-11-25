@@ -1,0 +1,12 @@
+product_code,description,supplier,unit,currency,unit_price,quantity_available,lead_time_business_days,certificate_of_conformity,source_date
+HFE-220,10 micron cellulose hydraulic filter 220 L/min 25 bar,Northstar Marine Components,each,USD,84.00,12,5,yes,2026-02-20
+HFE-220X,10 micron glass fibre hydraulic filter 220 L/min 30 bar,Northstar Marine Components,each,USD,112.50,4,9,yes,2026-02-20
+HFE-90,25 micron cellulose hydraulic filter 90 L/min 16 bar,Pelagic Industrial Supply,each,USD,47.25,18,3,no,2026-02-20
+PSP-40,Mechanical seal kit Pelagic 40-series 40 mm shaft,Pelagic Industrial Supply,kit,USD,365.00,2,12,yes,2026-02-20
+PSP-60,Mechanical seal kit Pelagic 60-series 60 mm shaft,Northstar Marine Components,kit,USD,425.00,0,16,yes,2026-02-20
+GSK-DN50,DN50 compressed-fibre gasket kit 10 bar 120 C,Northstar Marine Components,kit,USD,29.80,30,4,no,2026-02-20
+GSK-DN80,DN80 spiral-wound gasket kit 40 bar 250 C,Pelagic Industrial Supply,kit,USD,68.40,7,8,yes,2026-02-20
+LED-24,24 V DC IP67 exterior navigation lamp,Northstar Marine Components,each,USD,218.00,5,10,yes,2026-02-20
+LED-230,230 V AC IP54 indoor inspection lamp,Pelagic Industrial Supply,each,USD,96.00,11,6,no,2026-02-20
+SHK-12,12 mm stainless bow shackle 1.5 tonne WLL,Northstar Marine Components,each,USD,38.00,9,2,yes,2026-02-20
+SHK-16,16 mm galvanized bow shackle 2 tonne WLL,Pelagic Industrial Supply,each,USD,44.50,6,7,yes,2026-02-20

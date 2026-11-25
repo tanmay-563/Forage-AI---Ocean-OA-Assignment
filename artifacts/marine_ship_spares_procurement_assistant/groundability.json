@@ -1,0 +1,35 @@
+{
+  "supported_topics": [
+    "Catalogue, stock, and lead time",
+    "Electrical and deck equipment",
+    "Hydraulic filter elements",
+    "Pricing, freight, and taxes",
+    "Pump and gasket parts",
+    "Receiving and inspection",
+    "Returns and records",
+    "Supplier selection and approval"
+  ],
+  "partially_supported_topics": [],
+  "unsupported_topics": [
+    "a stock quantity and must not be interpreted as zero or as available"
+  ],
+  "conflicting_information": [],
+  "unknown_information": [
+    {
+      "detail": "a stock quantity and must not be interpreted as zero or as available",
+      "source": "procurement_policy.md",
+      "page": null,
+      "row": null,
+      "classification": "explicitly unsupported/unknown"
+    }
+  ],
+  "sources": [
+    "catalogue.csv",
+    "procurement_policy.md",
+    "product_specifications.md",
+    "supplier_northstar.pdf",
+    "supplier_pelagic.pdf"
+  ],
+  "coverage_note": "Supported topics are inferred from headings. Explicitly missing facts are captured from document statements; other partial coverage and conflicts need human review.",
+  "evidence_checks": []
+}

@@ -1,0 +1,326 @@
+[
+  {
+    "test_id": "doc_917616f7",
+    "question": "What does the document say about maintenance spares purchased Blue?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "This fictional policy applies to maintenance spares purchased by Blue Current Marine Services for its coastal vessel fleet."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "This fictional policy applies to maintenance spares purchased by Blue Current Marine Services for its coastal vessel fleet."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_ffd70b03",
+    "question": "What does the document say about Prices and stock positions?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Prices and stock positions in the accompanying catalogue are synthetic snapshots dated 20 February 2026."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Prices and stock positions in the accompanying catalogue are synthetic snapshots dated 20 February 2026."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_c4f028af",
+    "question": "What does the document say about Buyers verify the requested?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Buyers must verify that the requested part matches the vessel's approved equipment specification before placing an order."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Buyers must verify that the requested part matches the vessel's approved equipment specification before placing an order."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_688f1147",
+    "question": "What does the document say about Purchases USD approved Fleet?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Purchases up to USD 2,500 may be approved by a Fleet Maintenance Supervisor."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Purchases up to USD 2,500 may be approved by a Fleet Maintenance Supervisor."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_dce16a95",
+    "question": "What does the document say about Purchases USD through approval?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Purchases from USD 2,500.01 through USD 15,000 require approval from both the Fleet Maintenance Supervisor and Procurement Manager."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Purchases from USD 2,500.01 through USD 15,000 require approval from both the Fleet Maintenance Supervisor and Procurement Manager."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_ff8924a5",
+    "question": "What does the document say about Purchases above USD the?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Purchases above USD 15,000 require the Procurement Director's written approval before a purchase order is issued."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Purchases above USD 15,000 require the Procurement Director's written approval before a purchase order is issued."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_28bcca58",
+    "question": "What does the document say about Buyers obtain comparable quotations?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Buyers should obtain two comparable quotations for purchases above USD 5,000 when two qualified suppliers exist."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Buyers should obtain two comparable quotations for purchases above USD 5,000 when two qualified suppliers exist."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_2e0e98b3",
+    "question": "What does the document say about single-source justification required only?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "A single-source justification is required when only one qualified supplier can meet the required specification or delivery window."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "A single-source justification is required when only one qualified supplier can meet the required specification or delivery window."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_5e18e5d4",
+    "question": "What does the document say about Supplier onboarding completed compliance?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Supplier onboarding requires a completed compliance form, bank verification, tax registration, and sanctions screening."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Supplier onboarding requires a completed compliance form, bank verification, tax registration, and sanctions screening."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_d8392601",
+    "question": "What does the document say about The ship-spares catalogue planning?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "The ship-spares catalogue is a planning snapshot and does not reserve inventory for a buyer."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "The ship-spares catalogue is a planning snapshot and does not reserve inventory for a buyer."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "multi_doc_0734226f",
+    "question": "Compare the documents on Supplier selection and approval: Buyers verify the requested and Hydraulic filter elements: Product code HFE-220 uses.",
+    "expected_behavior": "Combine both documented facts and cite both sources.",
+    "expected_facts": [
+      "Buyers must verify that the requested part matches the vessel's approved equipment specification before placing an order.",
+      "Product code HFE-220 uses a 10-micron cellulose element rated for 220 litres per minute at 25 bar."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [
+      "procurement_policy.md",
+      "product_specifications.md"
+    ],
+    "expected_evidence": [
+      "Buyers must verify that the requested part matches the vessel's approved equipment specification before placing an order.",
+      "Product code HFE-220 uses a 10-micron cellulose element rated for 220 litres per minute at 25 bar."
+    ],
+    "category": "multiple documents",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "cross_doc_6f3e5447",
+    "question": "What differs between the documents regarding Supplier selection and approval: Purchases USD approved Fleet and Hydraulic filter elements: Product code HFE-220X uses?",
+    "expected_behavior": "Synthesize both passages with citations.",
+    "expected_facts": [
+      "Purchases up to USD 2,500 may be approved by a Fleet Maintenance Supervisor.",
+      "Product code HFE-220X uses a 10-micron glass-fibre element rated for 220 litres per minute at 30 bar."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [
+      "procurement_policy.md",
+      "product_specifications.md"
+    ],
+    "expected_evidence": [
+      "Purchases up to USD 2,500 may be approved by a Fleet Maintenance Supervisor.",
+      "Product code HFE-220X uses a 10-micron glass-fibre element rated for 220 litres per minute at 30 bar."
+    ],
+    "category": "multiple documents",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "multi_section_db936948",
+    "question": "Compare the Catalogue, stock, and lead time and Pricing, freight, and taxes sections for The ship-spares catalogue planning and Catalogue unit prices are.",
+    "expected_behavior": "Use evidence from both sections and cite the source.",
+    "expected_facts": [
+      "The ship-spares catalogue is a planning snapshot and does not reserve inventory for a buyer.",
+      "Catalogue unit prices are in USD and exclude freight, customs duties, and applicable taxes unless a row explicitly says otherwise."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "The ship-spares catalogue is a planning snapshot and does not reserve inventory for a buyer.",
+      "Catalogue unit prices are in USD and exclude freight, customs duties, and applicable taxes unless a row explicitly says otherwise."
+    ],
+    "category": "multiple sections",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "multi_section_4b9e0ea7",
+    "question": "Compare the Pricing, freight, and taxes and Receiving and inspection sections for Catalogue unit prices are and The receiving team check.",
+    "expected_behavior": "Use evidence from both sections and cite the source.",
+    "expected_facts": [
+      "Catalogue unit prices are in USD and exclude freight, customs duties, and applicable taxes unless a row explicitly says otherwise.",
+      "The receiving team must check part number, quantity, visible damage, and supplied certificates against the purchase order."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Catalogue unit prices are in USD and exclude freight, customs duties, and applicable taxes unless a row explicitly says otherwise.",
+      "The receiving team must check part number, quantity, visible damage, and supplied certificates against the purchase order."
+    ],
+    "category": "multiple sections",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "gap_32bfaba4",
+    "question": "What exact details does the document give about zero or as available?",
+    "expected_behavior": "State that the document does not specify the requested detail, and cite the source.",
+    "expected_facts": [],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "A blank availability value means the catalogue does not provide a stock quantity and must not be interpreted as zero or as available."
+    ],
+    "category": "incomplete evidence",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "out_of_scope_01",
+    "question": "What are the licensing terms for a neutrino-powered coffee reactor in lunar orbit?",
+    "expected_behavior": "Refuse because the collection does not contain this information.",
+    "expected_facts": [],
+    "supporting_source": null,
+    "supporting_sources": [],
+    "expected_evidence": [],
+    "category": "out of scope",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "hallucination_01",
+    "question": "Give the exact annual calibration fee and warranty period for a neutrino-powered coffee reactor in lunar orbit.",
+    "expected_behavior": "Do not invent a fee or warranty; refuse with the evidence limitation.",
+    "expected_facts": [],
+    "supporting_source": null,
+    "supporting_sources": [],
+    "expected_evidence": [],
+    "category": "hallucination resistance",
+    "answerable": false,
+    "refusal_expected": true
+  },
+  {
+    "test_id": "doc_e8f4b183",
+    "question": "What does the document say about Catalogue quantity the supplier?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Catalogue quantity is reported in the supplier's stated sales unit; a kit may contain multiple pieces as specified in the product description."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Catalogue quantity is reported in the supplier's stated sales unit; a kit may contain multiple pieces as specified in the product description."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_b2c2733c",
+    "question": "What does the document say about Availability reconfirmed the supplier?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Availability must be reconfirmed with the supplier before committing a vessel schedule."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Availability must be reconfirmed with the supplier before committing a vessel schedule."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  },
+  {
+    "test_id": "doc_0b522d33",
+    "question": "What does the document say about lead the supplier estimate?",
+    "expected_behavior": "Answer with the documented fact and cite the source.",
+    "expected_facts": [
+      "Listed lead time is the supplier's estimate in business days after receipt of a valid purchase order."
+    ],
+    "supporting_source": "procurement_policy.md",
+    "supporting_sources": [],
+    "expected_evidence": [
+      "Listed lead time is the supplier's estimate in business days after receipt of a valid purchase order."
+    ],
+    "category": "direct factual",
+    "answerable": true,
+    "refusal_expected": false
+  }
+]
