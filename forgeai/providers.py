@@ -37,7 +37,7 @@ class ExtractiveProvider:
                 ranked.append((chunk, sentence, score + retrieval_score * 0.1))
         ranked.sort(key=lambda item: (-item[2], item[0].source, item[0].chunk_id))
         chosen, seen = [], set()
-        if re.search(r"\b(compare|contrast|difference|differs|both)\b", question, re.I):
+        if re.search(r"\b(compare|contrast|difference|differs|both|each document|each source|across documents|across sources)\b", question, re.I):
             best_by_source = {}
             best_by_section = {}
             for item in ranked:

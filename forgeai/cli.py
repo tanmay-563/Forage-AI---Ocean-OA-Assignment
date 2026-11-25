@@ -72,7 +72,7 @@ def main(argv=None) -> int:
         from .evaluation.optimizer import run_suite
         from .evaluation.judge import score
         runner = from_definition(args.agent)
-        results = run_suite(runner, load_cases(args.cases))
+        results = run_suite(runner, load_cases(args.cases, runner.chunks))
         print(json.dumps(score(results), indent=2)); return 0
     return 2
 

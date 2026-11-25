@@ -1,27 +1,32 @@
 # Architecture
 
-ForgeAI is a local Python package with a generic pipeline. A brief plus a document directory flows through intake/requirements, ingestion and groundability, declarative definition generation, generic retrieval-backed execution, generated evaluation, scoring, bounded optimization, and report generation. Demo domains are data folders and briefs; they do not have separate application code.
+ForgeAI uses one generic Python pipeline for CLI and Streamlit. A brief and document collection flow through ingestion, requirements, an agent definition, a retrieval-backed runner, evidence-derived evaluation, judging, bounded optimization, and reports.
 
 ```text
 brief + documents
-      -> intake -> requirements + groundability -> agent_definition.json
-      -> ingestion -> chunks/index -> generic runner -> answers + source references
-      -> dynamic eval cases -> deterministic judge (+ optional LLM judge)
-      -> <=3 targeted iterations -> scorecards + report
+  -> intake / requirements / diagnostics
+  -> extraction and provenance-preserving chunks
+  -> generated agent and selected tools
+  -> deterministic evaluation cases + exact evidence references
+  -> deterministic judge (+ optional explicitly configured Ollama judge)
+  -> <=3 optimization iterations on a fixed optimization set
+  -> post-selection holdout check, scorecards, per-case records, reports
 ```
 
-## Key modules
-- `forgeai/models.py`: validated data contracts.
-- `forgeai/ingestion.py`, `retrieval.py`: extraction, metadata-preserving chunks, local retrieval.
-- `forgeai/intake.py`, `groundability.py`, `generator.py`: generic factory stages.
-- `forgeai/providers.py`: Ollama HTTP provider and explicit offline extractive provider.
-- `forgeai/tools/`: allowlisted executable tools with input validation.
-- `forgeai/evaluation/`: dynamic cases, deterministic/hybrid judge, critic, optimizer.
-- `forgeai/runner.py`: loads any valid definition; no domain-specific branching.
-- `forgeai/pipeline.py`, `cli.py`: complete workflow and commands.
-- `app.py`: lightweight Streamlit client of the same pipeline.
+## Evaluation generation and provenance
 
-Uploaded content is treated as untrusted evidence. It cannot replace system instructions. Only files under the declared collection root are ingested or exposed to CSV lookup. No arbitrary Python execution is used.
+`forgeai/evaluation/cases.py` generates cases from qualifying source text and CSV row fields. Prose and PDF text use sentence-quality filters; CSV rows use non-empty named fields and retain the row number. Case provenance can include multiple `EvidenceProvenance` references. Validation checks each exact quotation, source filename, chunk ID, page/row metadata, and the primary reference. Multi-section or cross-document comparisons require separate evidence references and are generated only when the sources have a shared, specific subject. Numeric CSV comparisons record both quoted operands and verify the derived difference and lower-priced item. Missing-information/refusal cases are explicit and counted separately. Every build enforces at least 20 factual cases.
 
-## Retrieval and model behavior
-Retrieval is local and lightweight. Sentence-transformers/FAISS are optional accelerators; lexical retrieval is the no-download fallback. Ollama is optional. Offline mode is explicitly extractive and returns evidence excerpts or abstains; it does not pretend to be generative. The judge reports deterministic checks separately from optional semantic model review.
+`forgeai/ingestion.py` records page/row diagnostics and prose exclusion reasons. Evaluations do not force categories that the source set cannot substantiate. Distinct facts are not enough by themselves to guarantee useful questions: the deterministic topic templates remain a known quality limitation.
+
+## Judge and evaluator configuration
+
+`forgeai/evaluation/judge.py` computes deterministic lexical correctness, evidence presence, citations, refusal correctness, completeness, and a separate writing-quality proxy. Writing quality does not affect the factual pass threshold. Per-case records preserve retrieved evidence, checks, explanation, any LLM result, disagreements, and final decision.
+
+`forgeai/evaluation/semantic_judge.py` optionally sends two anonymous answer texts to an Ollama evaluator in both orders. It records preference changes and independent/same-model metadata. Configure `FORGEAI_JUDGE_PROVIDER=ollama` and `FORGEAI_JUDGE_MODEL`; no evaluator is the default and produces an explicit unavailable status. Same-model judging is disclosed and is not called independent. Blind labels and order swaps are bias probes, not guarantees against bias.
+
+## Optimizer and interfaces
+
+`forgeai/evaluation/optimizer.py` preserves case IDs, caps the loop at three iterations, records detailed failed-case evidence and exact configuration snapshots, and selects changes using optimization-set results only. With at least 25 factual cases, a deterministic one-in-five holdout is scored after selection and is not used for candidate acceptance. Smaller sets disclose the lack of a useful holdout. Regression and score decreases are retained in logs.
+
+`forgeai/pipeline.py` is shared by `forgeai/cli.py` and `app.py`; both interfaces therefore use the same case validation and judge. The runner loads definitions and their own collection dynamically. Tools are allowlisted and validated before execution.

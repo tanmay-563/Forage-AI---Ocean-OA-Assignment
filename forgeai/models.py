@@ -15,6 +15,14 @@ class SourceRef(StrictModel):
     chunk_id: str
 
 
+class EvidenceProvenance(StrictModel):
+    source_filename: str
+    page_number: int | None = None
+    row_number: int | None = None
+    chunk_id: str
+    quotation: str
+
+
 class Chunk(StrictModel):
     chunk_id: str
     text: str
@@ -77,6 +85,15 @@ class EvalCase(StrictModel):
     supporting_source: str | None = None
     supporting_sources: list[str] = Field(default_factory=list)
     expected_evidence: list[str] = Field(default_factory=list)
+    source_filename: str | None = None
+    page_number: int | None = None
+    row_number: int | None = None
+    chunk_id: str | None = None
+    supporting_quotation: str | None = None
+    evidence_provenance: list[EvidenceProvenance] = Field(default_factory=list)
+    reasoning_metadata: dict[str, Any] = Field(default_factory=dict)
+    answerability_classification: Literal["evidence_backed", "unsupported_refusal"] = "evidence_backed"
+    evidence_validation_status: Literal["validated", "not_applicable"] = "not_applicable"
     category: str
     answerable: bool
     refusal_expected: bool
@@ -100,3 +117,11 @@ class EvalResult(StrictModel):
     semantic_scores: dict[str, float] | None = None
     semantic_judge_error: str | None = None
     judge_disagreements: list[str] = Field(default_factory=list)
+    writing_quality: float = 0
+    deterministic_checks: dict[str, Any] = Field(default_factory=dict)
+    evidence_used: list[dict[str, Any]] = Field(default_factory=list)
+    judge_explanation: str = ""
+    llm_judge_result: dict[str, Any] | None = None
+    order_swapped_result: dict[str, Any] | None = None
+    evaluator_metadata: dict[str, Any] = Field(default_factory=dict)
+    final_decision: str = "not_evaluated"

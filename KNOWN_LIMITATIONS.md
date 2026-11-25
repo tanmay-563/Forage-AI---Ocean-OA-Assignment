@@ -1,12 +1,15 @@
 # Known limitations
 
-- The inspected environment has no Ollama installation or model. No model was downloaded. Default answers are explicit extractive excerpts and abstentions, not synthesized LLM answers.
-- Ollama provider and an optional semantic judge are implemented for answer/evaluation runs, but no live Ollama model was available during verification. LLM-assisted intake/case generation is not available.
-- Topic coverage is inferred from Markdown headings. It cannot reliably identify nuanced partial coverage or contradictions.
-- Evaluation questions are primarily derived from source sentences, with multi-document, multi-section, ambiguity, and refusal cases added where the collection supports them. A single-file collection cannot demonstrate cross-document synthesis, and not every domain has an ambiguous topic such as annual versus sick leave.
-- Deterministic judge uses lexical matching and cannot robustly assess semantic paraphrases. Optional semantic judging is a single-model rubric score, not a calibrated unbiased judge; no pairwise position-bias experiment is performed.
-- Optimizer supports simple targeted changes to top-k and prompt clauses. It does not tune embedding models, chunking, or query rewrites. Candidate regressions are logged and rolled back.
-- The weather tool calls Open-Meteo and therefore needs network access; tests mock the HTTP call. It is attached only when the brief requests weather.
-- PDF extraction requires PyMuPDF. The source PDF helper uses only Python's standard library; PDF reading still requires the declared dependency.
-- The synthetic HR, marine, and laboratory documents are not real legal, supplier, engineering, or safety advice.
-- Streamlit stores uploaded collections in `.forgeai_uploads/` so generated agent definitions remain runnable. The user should remove that ignored directory manually when no longer needed.
+- Default provider is offline and extractive. No live answer model was used in the latest regression runs.
+- LLM judging is opt-in (`FORGEAI_JUDGE_PROVIDER=ollama`, `FORGEAI_JUDGE_MODEL=...`). No independent evaluator was available in the current environment, so semantic judgment was unavailable and deterministic checks were used. Same-model judging is disclosed when configured; it is not independent.
+- Anonymous A/B order-swapped judge calls detect some position-sensitive outcomes, but they do not establish evaluator impartiality or eliminate bias. The Ollama rubric itself is not calibrated against human judgments.
+- Deterministic semantic correctness is a lexical proxy and can penalize valid paraphrases or accept superficial word overlap. Writing quality currently uses a simple length proxy, not a trained readability metric.
+- Case generation uses deterministic source sentence and CSV field templates. Multi-section and cross-document comparison cases require shared terms; some prompts may be broad or fail retrieval. Inspect each generated case and per-case judge result before using evaluation scores as product-quality claims.
+- CSV factual cases target named fields and row-level field pairs; numeric comparison is implemented for matching currency and price columns. Ambiguity, conflicting evidence, and nuanced refusal cases are not synthesized unless a safe evidence-grounded rule exists; coverage is not guaranteed.
+- The holdout is a fixed, deterministic one-in-five split of factual cases only when at least 25 factual cases exist. Smaller collections disclose that no meaningful holdout is available. Holdout results are not used to select changes.
+- The optimizer changes limited prompt and retrieval settings. It does not tune chunking, query rewrites, embeddings, or rerankers. A score improvement on the optimization set is not a general quality guarantee.
+- PDF extraction can still produce artifacts or lose layout/table relationships. Empty and scanned pages are diagnosed but OCR is not implemented.
+- Topic coverage is inferred from headings and lexical matches; nuanced contradictions and partial coverage need human review.
+- Weather calls Open-Meteo and requires network access; tests mock the HTTP call. It is attached only when selected.
+- Demo HR, procurement, and lab safety documents are synthetic and not real legal, supplier, engineering, or safety advice.
+- Streamlit retains uploaded files under `.forgeai_uploads/` so agent definitions remain runnable. Users can remove those local uploads when no longer needed.

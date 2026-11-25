@@ -4,7 +4,7 @@ __pycache__/
 .pytest_cache/
 .env
 .streamlit/secrets.toml
-artifacts/*/
-!artifacts/.gitkeep
+/artifacts/
+/artifacts_*/
 .forgeai_uploads/
 *.log

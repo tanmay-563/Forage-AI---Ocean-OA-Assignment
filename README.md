@@ -21,10 +21,9 @@ The CLI is the primary interface. Streamlit is a thin UI over the same workflow.
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-Copy-Item .env.example .env
 ```
 
-ForgeAI does not load `.env` automatically; export values in the shell or set them in the environment. Defaults use offline extractive mode. PDF extraction requires PyMuPDF, included in `requirements.txt`.
+ForgeAI reads configuration from environment variables and does not load `.env` files automatically. Set any needed variables in your shell or operating-system environment. Defaults use offline extractive mode. PDF extraction requires PyMuPDF, included in `requirements.txt`.
 
 ## Ollama (optional)
 
@@ -79,9 +78,11 @@ Tests use synthetic files and mocked weather HTTP calls. The suite does not clai
 
 ## Workflow and scoring
 
-Intake generates a structured requirements record and up to five clarifying questions. The built-in evaluation case generator derives source-linked factual, multi-document, multi-section, ambiguous-topic, explicit-gap, out-of-scope, and hallucination-resistance cases from actual collection content when available. It rejects collections that cannot support the requested minimum. The judge checks expected facts, retrieved evidence, source citations, refusal, groundedness, and completeness deterministically. When Ollama is selected, an optional semantic judge reports its scores separately, records disagreements, and never overrides deterministic citation/refusal safety checks.
+Intake creates requirements and up to five clarifying questions. Evaluation generation is deterministic: prose and PDF cases come from qualifying sentences; CSV cases refer to named columns and actual rows. Evidence cases include exact chunk quotations and source/page/row references that are checked against ingested chunks. Limited comparison cases are added only when separate sections or documents share a specific subject. Numeric CSV comparisons are computed from cited operands and revalidated arithmetically. Refusal cases use explicit missing-information expectations and have separate counts. Ambiguity, conflicting evidence, and other categories appear only when the documents support them. A completed build requires at least 20 validated factual cases; insufficient content stops the build with diagnostics.
 
-Optimization uses the same cases in each run, changes retrieval settings or targeted instructions based on observed failure labels, and keeps a candidate only when its measured pass rate improves. A regression is logged and rolled back. It stops at three iterations, no observed improvement, or no remaining failures. Scores are actual case results, not estimates.
+The deterministic judge reports semantic correctness (lexical proxy), evidence grounding, citation correctness, completeness, refusal correctness, and writing quality separately. Writing quality cannot raise the factual pass decision. LLM judging is opt-in with `FORGEAI_JUDGE_PROVIDER=ollama` and `FORGEAI_JUDGE_MODEL=<installed-model>`. It sees anonymized A/B answers in both orders; changes in decision are recorded. `evaluator_metadata` discloses when judge and generator use the same model. Without a configured evaluator, semantic judging is marked unavailable. These checks do not eliminate evaluator bias.
+
+Optimization reuses the validated case IDs, evaluates settings changes on an optimization set, and keeps a candidate only when that set improves. When at least 25 factual cases exist, a stable one-in-five factual holdout is evaluated only after selection; it is not used to choose changes. Smaller suites disclose that no meaningful holdout was available. Each iteration records failed-case evidence, mismatch, classification, root cause, exact before/after settings, scores, regressions, and limits. The maximum is three iterations. Full per-case judge records are saved in `evaluation_results.json`.
 
 ## Folder structure
 
@@ -100,4 +101,4 @@ cli.py                   compatibility entry point
 
 ## Limitations
 
-This is an assignment prototype, not a production HR/legal, procurement, or safety system. Retrieval is lexical and topic coverage is heading-based. Offline answers are evidence excerpts, not generated synthesis. Evaluation cases are source-derived and may not represent every multi-step question. The verified runs used deterministic lexical scoring; optional Ollama semantic scores were not available during this run and no calibrated bias study was performed. The optimizer has limited configuration/prompt changes. Weather requires internet access and is only used when selected. Details and current gaps are in [KNOWN_LIMITATIONS.md](./KNOWN_LIMITATIONS.md).
+This is an assignment prototype, not a production HR/legal, procurement, or safety system. Retrieval is lexical and offline answers are evidence excerpts, not generated synthesis. Case construction uses conservative heuristics and comparison prompts may still be too broad; review category coverage and per-case records before relying on scores. Deterministic correctness uses lexical overlap, writing quality is a simple length/readability proxy, and no calibrated evaluator-bias study has been run. Holdout comparison is meaningful only for larger suites. The optimizer changes only a small set of prompt/retrieval settings. Weather requires internet access and is attached only when selected. See [KNOWN_LIMITATIONS.md](./KNOWN_LIMITATIONS.md).

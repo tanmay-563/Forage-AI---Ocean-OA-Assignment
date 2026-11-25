@@ -28,7 +28,19 @@ def evaluate(case: EvalCase, output: dict, semantic_judge=None) -> EvalResult:
     expected_sources = case.supporting_sources or ([case.supporting_source] if case.supporting_source else [])
     cited_sources = {r.get("source") for r in refs}
     missing_sources = case.answerable and bool(expected_sources) and not all(source in cited_sources for source in expected_sources)
-    citation = 1.0 if (refs and (not expected_sources or all(source in cited_sources for source in expected_sources))) or (not case.answerable and not refs and not expected_sources) else 0.0
+    expected_locations = case.evidence_provenance
+    if not expected_locations and case.chunk_id:
+        expected_locations = [{"source_filename": case.source_filename or case.supporting_source, "chunk_id": case.chunk_id,
+            "page_number": case.page_number, "row_number": case.row_number}]
+    citation_valid = bool(refs) and (not expected_sources or all(source in cited_sources for source in expected_sources))
+    for expected_ref in expected_locations:
+        source = expected_ref.source_filename if hasattr(expected_ref, "source_filename") else expected_ref.get("source_filename")
+        chunk_id = expected_ref.chunk_id if hasattr(expected_ref, "chunk_id") else expected_ref.get("chunk_id")
+        page = expected_ref.page_number if hasattr(expected_ref, "page_number") else expected_ref.get("page_number")
+        row = expected_ref.row_number if hasattr(expected_ref, "row_number") else expected_ref.get("row_number")
+        citation_valid = citation_valid and any(ref.get("source") == source and ref.get("chunk_id") == chunk_id and
+            ref.get("page") == page and ref.get("row") == row for ref in refs)
+    citation = 1.0 if citation_valid or (not case.answerable and not refs and not expected_sources) else 0.0
     if case.expected_evidence:
         evidence_hits = sum(1 for snippet in case.expected_evidence if snippet.casefold() in evidence_text)
         evidence_quality = evidence_hits / len(case.expected_evidence)
@@ -63,29 +75,48 @@ def evaluate(case: EvalCase, output: dict, semantic_judge=None) -> EvalResult:
     semantic_scores = None
     semantic_error = None
     disagreements = []
+    semantic = None
     if semantic_judge:
         try:
             semantic = semantic_judge(case, output)
             semantic_scores = semantic["scores"]
             notes.extend(str(note) for note in semantic.get("notes", []))
-            deterministic = {"groundedness": grounded, "correctness": correctness, "evidence_quality": evidence_quality,
-                "citation_correctness": citation, "refusal_appropriateness": refusal, "completeness": completeness}
-            disagreements = [f"{key}: deterministic={value:.2f}, semantic={semantic_scores[key]:.2f}" for key, value in deterministic.items() if abs(value - semantic_scores[key]) >= 0.4]
+            deterministic = {"groundedness": grounded, "semantic_correctness": correctness,
+                "citation_correctness": citation, "refusal_correctness": refusal, "completeness": completeness}
+            disagreements = [f"{key}: deterministic={value:.2f}, semantic={semantic_scores[key]:.2f}" for key, value in deterministic.items() if key in semantic_scores and abs(value - semantic_scores[key]) >= 0.4]
         except Exception as exc:
             semantic_error = f"{type(exc).__name__}: {exc}"
+    writing_quality = 1.0 if answer.strip() and len(answer.split()) <= 80 else (0.5 if answer.strip() else 0.0)
+    judge_meta = {key: semantic[key] for key in ("order_swapped_result", "same_model_judging", "evaluator_model", "independent_evaluator") if semantic and key in semantic}
+    decision = "pass" if passed else "fail"
+    deterministic_checks = {"answer_present": bool(answer.strip()), "expected_facts": fact_scores,
+        "groundedness": grounded, "evidence_quality": evidence_quality, "citation_correctness": citation,
+        "refusal_correctness": refusal, "completeness": completeness, "writing_quality": writing_quality,
+        "expected_sources_present": not missing_sources}
+    explanation = "; ".join(notes) if notes else ("All deterministic evidence and answer checks passed." if passed else "One or more deterministic answer or provenance checks failed.")
     return EvalResult(test_id=case.test_id, question=case.question, answer=answer, sources=refs, groundedness=grounded,
         correctness=correctness, evidence_quality=evidence_quality, citation_correctness=citation, refusal_appropriateness=refusal,
         completeness=completeness, instruction_compliance=1.0 if answer else 0.0, passed=passed,
-        failure_classification=cls, judge_notes=notes, semantic_scores=semantic_scores, semantic_judge_error=semantic_error, judge_disagreements=disagreements)
+        failure_classification=cls, judge_notes=notes, semantic_scores=semantic_scores, semantic_judge_error=semantic_error, judge_disagreements=disagreements,
+        writing_quality=writing_quality, deterministic_checks=deterministic_checks,
+        evidence_used=retrieved_evidence, judge_explanation=explanation,
+        llm_judge_result=semantic_scores, order_swapped_result=judge_meta.get("order_swapped_result"),
+        evaluator_metadata={key: judge_meta[key] for key in ("same_model_judging", "evaluator_model", "independent_evaluator") if key in judge_meta},
+        final_decision=decision)
 
 
 def score(results: list[EvalResult]) -> dict:
-    dimensions = ["groundedness", "correctness", "evidence_quality", "citation_correctness", "refusal_appropriateness", "completeness", "instruction_compliance"]
+    dimensions = ["groundedness", "correctness", "evidence_quality", "citation_correctness", "refusal_appropriateness", "completeness", "instruction_compliance", "writing_quality"]
     semantic = [r.semantic_scores for r in results if r.semantic_scores is not None]
-    semantic_summary = {d: round(sum(item[d] for item in semantic) / len(semantic), 4) for d in dimensions} if semantic else None
+    semantic_dimensions = sorted(set.intersection(*(set(item) for item in semantic))) if semantic else []
+    semantic_summary = {d: round(sum(item[d] for item in semantic) / len(semantic), 4) for d in semantic_dimensions} if semantic else None
     return {"case_count": len(results), "pass_count": sum(r.passed for r in results), "pass_rate": round(sum(r.passed for r in results) / max(1, len(results)), 4),
             "dimensions": {d: round(sum(getattr(r, d) for r in results) / max(1, len(results)), 4) for d in dimensions},
             "semantic_dimensions": semantic_summary, "semantic_judge_cases": len(semantic),
+            "semantic_judging_status": "available" if semantic else "unavailable; deterministic checks only",
+            "independent_evaluator_cases": sum(bool(r.evaluator_metadata.get("independent_evaluator")) for r in results),
+            "same_model_judge_cases": sum(bool(r.evaluator_metadata.get("same_model_judging")) for r in results),
+            "order_swap_results": [{"test_id": r.test_id, **r.order_swapped_result} for r in results if r.order_swapped_result],
             "judge_disagreements": [{"test_id": r.test_id, "differences": r.judge_disagreements} for r in results if r.judge_disagreements],
             "semantic_judge_errors": [{"test_id": r.test_id, "error": r.semantic_judge_error} for r in results if r.semantic_judge_error],
             "failures": [r.model_dump() for r in results if not r.passed], "method": "deterministic primary scoring; optional Ollama semantic scores are reported separately and do not override deterministic safety checks"}

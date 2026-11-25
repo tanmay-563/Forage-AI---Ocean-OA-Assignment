@@ -12,6 +12,8 @@ class Settings:
     chunk_chars: int = 1000
     chunk_overlap: int = 120
     top_k: int = 5
+    judge_provider: str = "none"
+    judge_model: str = ""
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -23,6 +25,8 @@ class Settings:
             chunk_chars=max(200, int(os.getenv("FORGEAI_CHUNK_CHARS", "1000"))),
             chunk_overlap=max(0, int(os.getenv("FORGEAI_CHUNK_OVERLAP", "120"))),
             top_k=max(1, int(os.getenv("FORGEAI_TOP_K", "5"))),
+            judge_provider=os.getenv("FORGEAI_JUDGE_PROVIDER", "none").strip().lower(),
+            judge_model=os.getenv("FORGEAI_JUDGE_MODEL", "").strip(),
         )
 
 
