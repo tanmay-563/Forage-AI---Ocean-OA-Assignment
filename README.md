@@ -2,6 +2,14 @@
 
 ForgeAI is a local-first prototype of a generic document-grounded AI agent factory. It takes a natural-language brief and a document folder, creates requirements and a declarative agent definition, ingests and retrieves source evidence, generates an evaluation suite from the supplied collection, runs a bounded optimization loop, and saves an honest report.
 
+
+## 🎥 Project Demo
+
+Watch the complete ForgeAI walkthrough demonstrating the agent creation pipeline,
+document ingestion, evidence-grounded retrieval, evaluation, optimization,
+and final reporting.
+
+[▶ Watch the ForgeAI Demo on Google Drive](https://drive.google.com/file/d/1pNWTaIEr9nmflv-F0TgjD6fBNSLTBNDW/view?usp=drive_link)
 ## Problem and design
 
 ![Project Architecture](image.png)
